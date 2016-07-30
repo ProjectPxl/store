@@ -1,0 +1,7 @@
+<h1><%= @product.name %></h1>
+
+<% if @product.carts.any? %>
+	<%= link_to "Remove from Cart", "remove url" %>
+<% else %>
+	<%= link_to "Add to Cart", add_product_to_cart_path(@product) %>
+<% end %>

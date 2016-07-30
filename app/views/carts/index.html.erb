@@ -1,0 +1,9 @@
+<h1>All Products in Cart</h1>
+
+<ul>
+	<% @products.each do |product| %>
+		<li><%= link_to product.product.name, product.product %></li>
+	<% end %>
+</ul>
+
+<%= link_to "Checkout", checkouts_path %>
