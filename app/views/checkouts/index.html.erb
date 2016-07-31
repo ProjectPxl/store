@@ -1,3 +1,7 @@
+<!-- Shipping -->
+<!-- Billing -->
+<!-- Card info -->
+<h2>Total: $<%= @amount/100 %></h2>
 <%= form_tag checkouts_path, method: 'post', id: 'payment-form' do %>
   <span class="payment-errors"></span>
 
