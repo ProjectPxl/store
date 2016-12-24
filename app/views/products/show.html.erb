@@ -3,5 +3,5 @@
 <% if @product.carts.any? %>
 	<%= link_to "Remove from Cart", cart_path, method: :delete %>
 <% else %>
-	<%= link_to "Add to Cart", add_product_to_cart_path(@product) %>
+	<%= button_tag "Add to Cart", class:'js-add-cart' %>
 <% end %>

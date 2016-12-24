@@ -10,7 +10,7 @@
 
   <body>
     <%= link_to "STORE", root_path %> | 
-    <%= link_to "Cart", carts_path %> | 
+    <%= react_component('Cart', count: get_cart_count) %> | 
     <%= link_to "All Orders", orders_path %>
     <p></p>
     <% if user_signed_in? %>

@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  respond_to :html, :json
+
 	def index
 		@products = current_user.carts
 	end
@@ -9,7 +11,7 @@ class CartsController < ApplicationController
     cart.product = product
     cart.user    = current_user
     cart.save! #add conditionals
-  	redirect_to action: "index"
+  	render json: get_cart_count
   end
 
   def destroy
