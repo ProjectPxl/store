@@ -1,0 +1,21 @@
+<h1>My account: <%= current_user.email %></h1>
+
+<h2>My Orders</h2>
+
+<% if @orders.any? %>
+	
+	<ul>
+		<% @orders.each do |order| %>
+			<li>
+				Status: <%= order.status %>
+				<% order.order_items.each do |item| %>
+					<ol><%= item.product.name %> | Q:<%= item.quantity %></ol>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+	<p><%= link_to "Checkout", checkouts_path %></p>
+
+<% else %>
+	<p>No orders made yet!</p>
+<% end %>
