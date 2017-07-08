@@ -1,7 +1,1 @@
-<h1><%= @product.name %></h1>
-
-<% if @product.carts.any? %>
-	<%= link_to "Remove from Cart", cart_path, method: :delete %>
-<% else %>
-	<%= button_tag "Add to Cart", class:'js-add-cart' %>
-<% end %>
+<%= render partial: "partials/product", locals: {action: "update", id: @product.id} %>

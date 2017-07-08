@@ -1,5 +1,9 @@
 $(document).ready ->	
+	$('.js-clickEdit').clickEdit()
+
 	$('.js-add-cart').click ->
+	
+
 		$.get( "/carts/create/2")
 	  .done (data)->
 	  	$(document).trigger 'product:addCart', data

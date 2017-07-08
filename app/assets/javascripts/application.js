@@ -16,4 +16,6 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require jquery.rest
 //= require_tree .
+

@@ -1,0 +1,34 @@
+<section class="product-page grid js-clickEdit" data-action="<%= action %>" data-product-id="<%= id ||= '' %>">
+	
+	<div class="slider">
+		<%= render partial: "partials/carousel" %>
+	</div>
+
+	<div class="copy">
+		<h1 class="name js-editor" data-edit="name">
+			<%= @product.name || "Product Name" %>
+		</h1>
+
+		<div class="price">
+			$
+			<span class="js-editor" data-edit="price">
+				<%= @product.price || "0" %></span>
+			</div>
+
+
+		<div class="add-cart">
+			<%= button_tag "Add to Cart", class:'js-add-cart' %>
+		</div>
+	</div>
+
+	<div class="description js-wysiwyg" data-edit="description">
+		<%= @product.description? ? @product.description.html_safe : "Product Description" %>
+	</div>
+
+<% if action == "create" %>
+	<button class="js-save">Create Product</button>
+<% else %>
+	<button class="js-save">Update Product</button>
+<% end %>
+
+</section>

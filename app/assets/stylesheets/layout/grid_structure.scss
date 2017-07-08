@@ -20,3 +20,28 @@
 .slider {
 	@include span(12 of 12);
 }
+
+.product-page {
+	.slider {
+		img{width: 100%; height: 100%;}
+		@include susy-breakpoint($bp-large) {
+		    @include span(6 of 12);
+		}
+	}
+
+	.copy {
+		@include susy-breakpoint($bp-large) {
+		    @include span(6 of 12 omega);
+		}
+	}
+
+	.description {
+		@include susy-breakpoint($bp-large) {
+		    @include span(12 of 12);
+		}
+	}
+
+	.edit-field {
+		@include span(6 of 6);
+	}
+}
