@@ -1,0 +1,25 @@
+<section class="nav">
+  <!-- <%= link_to "All Orders", orders_path %> -->
+
+  <div class="grid">  
+    
+    <div class="logo">
+      <%= link_to "STORE", root_path %>
+    </div>
+  
+    <div class="cart">
+      <%= react_component('Cart', count: get_cart_count) %>
+    </div>
+
+    <!-- <div class="user">
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, current_user %> | 
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+      <% else %>
+        <%= link_to('Login', new_user_session_path)  %>  
+      <% end %>
+    </div> -->
+
+  </div> <!-- grid -->
+
+</section>

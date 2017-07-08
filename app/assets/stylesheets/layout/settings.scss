@@ -1,0 +1,41 @@
+/**
+*
+* Grid Settings
+*
+**/
+
+// Defining breakpoints
+$bp-small: 520px;
+$bp-medium: 768px;
+$bp-large: 960px;
+$bp-huge: 1200px;
+
+
+// Susy settings
+$susy: (
+    container: 65em,
+    gutter-position: after,
+    gutters: 1/4,
+    global-box-sizing: border-box,
+    debug: (
+        image: show,
+        color: rgba(blue, .10)
+    )
+);
+
+/*------------------------------------*\
+    $Grid Setup
+\*------------------------------------*/
+
+//mobile first
+.grid {
+    @include container;
+
+    @include susy-breakpoint($bp-medium) {
+        @include container(8);
+    }   
+
+    @include susy-breakpoint($bp-large) {
+        @include container(12);
+    }
+}

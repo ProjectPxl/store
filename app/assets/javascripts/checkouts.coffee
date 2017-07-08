@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).ready ->	
 	$('.js-add-cart').click ->
 		$.get( "/carts/create/2")
 	  .done (data)->

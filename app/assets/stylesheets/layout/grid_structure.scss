@@ -1,0 +1,22 @@
+.nav {
+	.logo {
+		// mobile
+
+		// @include susy-breakpoint($bp-medium) {
+		// }   
+
+		@include susy-breakpoint($bp-large) {
+		    @include span(4 of 12);
+		}
+	}
+
+	.cart {
+		@include susy-breakpoint($bp-large) {
+		    @include span(2 of 12 omega);
+		}
+	}
+} //nav
+
+.slider {
+	@include span(12 of 12);
+}
