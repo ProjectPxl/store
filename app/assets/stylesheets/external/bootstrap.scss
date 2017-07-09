@@ -111,15 +111,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 15%;
-  color: #fff;
+  color: $red;
   text-align: center;
-  opacity: 0.5;
+  font-weight: bold;
 }
 
 .carousel-control-prev:focus, .carousel-control-prev:hover,
 .carousel-control-next:focus,
 .carousel-control-next:hover {
-  color: #fff;
+  // color: #fff;
   text-decoration: none;
   outline: 0;
   opacity: .9;
