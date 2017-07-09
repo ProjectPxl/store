@@ -24,21 +24,33 @@
 .product-page {
 	.slider {
 		img{width: 100%; height: 100%;}
-		@include susy-breakpoint($bp-large) {
-		    @include span(6 of 12);
-		}
+		@include span(6 of 12);
 	}
 
 	.copy {
-		@include susy-breakpoint($bp-large) {
-		    @include span(6 of 12 omega);
+		@include span(6 of 12 omega);
+
+		.dollar, .amount {
+			float: left;
+		}
+
+		.quantity {
+			@include span(2 of 6);
+
+			.qty-box {
+				height: 100%;
+				width: 100%;
+				display: inline-block;
+			}
+		}
+
+		.add-cart-btn {
+			@include span(4 of 6 omega);	
 		}
 	}
 
 	.description {
-		@include susy-breakpoint($bp-large) {
-		    @include span(12 of 12);
-		}
+		@include span(12 of 12);
 	}
 
 	.edit-field {

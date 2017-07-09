@@ -9,16 +9,24 @@
 			<%= @product.name || "Product Name" %>
 		</h1>
 
-		<div class="price">
-			$
-			<span class="js-editor" data-edit="price">
-				<%= @product.price || "0" %></span>
+		<div class="price cf">
+			<span class="dollar">$</span>
+			<p class="amount js-editor" data-edit="price">
+				<%= @product.price || "0" %>
+			</p>
 			</div>
 
+		<div class="add-cart cf">
 
-		<div class="add-cart">
-			<%= button_tag "Add to Cart", class:'js-add-cart' %>
+			<div class="quantity">
+				<%= react_component('QuantityBox') %>
+			</div>
+			<div class="add-cart-btn">
+				<%= button_tag "Add to Cart", class:'btn wide js-add-cart' %>
+			</div>
+
 		</div>
+
 	</div>
 
 	<div class="description js-wysiwyg" data-edit="description">
@@ -27,9 +35,9 @@
 
 <% if user_signed_in? %>
 	<% if action == "create" %>
-		<button class="js-save">Create Product</button>
+		<button class="btn js-save">Create Product</button>
 	<% else %>
-		<button class="js-save">Update Product</button>
+		<button class="btn js-save">Update Product</button>
 	<% end %>
 <% end %>
 

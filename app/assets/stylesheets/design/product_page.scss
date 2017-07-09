@@ -1,7 +1,38 @@
 .product-page {
 	
 	.description {
-		margin-top: 40px;
+		margin: 40px 0;
+	}
+
+	.copy {
+		p{margin: 0;}
+	}
+
+	.add-cart {
+		margin-top: 40px;	
+
+		.qty-box {
+		  border: 1px solid $black;
+		  border-radius: 3px;
+		  display: block;
+		}
+
+		span {
+		  color: $black;
+		  float: left;
+		  line-height: 60px;
+		  text-align: center;
+		  width: 33%;
+		  -webkit-font-smoothing: antialiased;
+		}
+
+		.dec,
+		.inc {		  
+		  &:hover {
+		    cursor: pointer;
+		  }
+		}
+
 	}
 	
 }

@@ -1,0 +1,14 @@
+.btn {
+	background-color: $red;
+	color: #fff;
+	border: 1px solid transparent;
+	padding: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+
+	&.wide {
+		width: 100%;
+	}
+}
+
