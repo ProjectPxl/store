@@ -25,10 +25,13 @@
 		<%= @product.description? ? @product.description.html_safe : "Product Description" %>
 	</div>
 
-<% if action == "create" %>
-	<button class="js-save">Create Product</button>
-<% else %>
-	<button class="js-save">Update Product</button>
+<% if user_signed_in? %>
+	<% if action == "create" %>
+		<button class="js-save">Create Product</button>
+	<% else %>
+		<button class="js-save">Update Product</button>
+	<% end %>
 <% end %>
+
 
 </section>
