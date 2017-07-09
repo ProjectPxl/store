@@ -57,3 +57,12 @@
 		@include span(6 of 6);
 	}
 }
+
+.thumbnails {
+	@include span(12 of 12);
+
+	li {
+		@include span(3 of 12);
+		img{width: 100%;}
+	}
+}

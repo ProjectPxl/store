@@ -2,7 +2,7 @@
 <section class="product-page grid <%= click_edit %>" data-action="<%= action %>" data-product-id="<%= id ||= '' %>">
 	
 	<div class="slider">
-		<%= render partial: "partials/carousel" %>
+		<%= render partial: "partials/carousel", locals: {images: @images ||= [], path: "product_images"} %>
 	</div>
 
 	<div class="copy">
@@ -40,7 +40,13 @@
 	<% elsif action == "update" %>
 		<button class="btn js-save">Update Product</button>
 	<% end %>
+
+	<!-- Button trigger modal -->
+	<button type="button" class="btn" data-toggle="modal" data-target="#myModal">
+	  Launch demo modal
+	</button>
 <% end %>
 
+<%= render partial: "partials/modal"%>
 
 </section>

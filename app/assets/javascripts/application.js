@@ -17,5 +17,6 @@
 //= require react_ujs
 //= require components
 //= require jquery.rest
+//= require image-picker
 //= require_tree .
 

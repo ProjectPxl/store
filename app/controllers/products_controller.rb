@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :get_product, only: [:show, :edit, :update]
+  before_action :get_images, only: [:show, :edit]
+  before_action :get_all_images, only: [:edit, :new]
 	layout 'product', only: [:show, :new, :edit]
   respond_to :html, :json
 
@@ -34,5 +36,13 @@ class ProductsController < ApplicationController
 
   def get_product
     @product = Product.find params[:id]
+  end
+
+  def get_images
+    @images = @product.product_images
+  end
+
+  def get_all_images
+    @all_product_images = Dir.glob("app/assets/images/product_images/*.jpg")
   end
 end

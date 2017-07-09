@@ -10,7 +10,7 @@
 
   <body>
     <%= render partial: "partials/nav" %>
-    <%= render partial: "partials/carousel" %>
+    <%= render partial: "partials/carousel", locals: {images:[]} %>
     <%= yield %> 
     <!-- <%= render partial: "partials/footer" %> -->
   </body>

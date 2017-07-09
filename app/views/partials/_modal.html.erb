@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal grid fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Slider Images</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <select multiple="multiple" class="image-picker">
+          <% @all_product_images.each_with_index do |image_path, index| %>
+            <option data-img-src="<%= "/assets/product_images/#{File.basename(image_path)}" %>" value="<%= File.basename(image_path) %>"></option>
+          <% end %>
+        </select>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
