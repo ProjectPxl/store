@@ -1,4 +1,5 @@
-<section class="product-page grid js-clickEdit" data-action="<%= action %>" data-product-id="<%= id ||= '' %>">
+<% click_edit = (action == "update" or action == "create") ? 'js-clickEdit' : '' %>
+<section class="product-page grid <%= click_edit %>" data-action="<%= action %>" data-product-id="<%= id ||= '' %>">
 	
 	<div class="slider">
 		<%= render partial: "partials/carousel" %>
@@ -33,10 +34,10 @@
 		<%= @product.description? ? @product.description.html_safe : "Product Description" %>
 	</div>
 
-<% if user_signed_in? %>
+<% if user_signed_in? %> <!-- make admin check -->
 	<% if action == "create" %>
 		<button class="btn js-save">Create Product</button>
-	<% else %>
+	<% elsif action == "update" %>
 		<button class="btn js-save">Update Product</button>
 	<% end %>
 <% end %>

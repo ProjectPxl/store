@@ -35,7 +35,7 @@
 
 				@product.price = parseFloat @product.price if @product.price
 				@product.name  = @product.name.trim() if @product.name
-				url = if @action is 'create' then '/products' else "#{@id}"
+				url = if @action is 'create' then '/products' else "/products/#{@id}"
 
 				$[@action] url, 
 					{ @product },

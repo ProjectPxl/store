@@ -3,7 +3,7 @@ var QuantityBox = React.createClass({
     return { value: 1 };
   },
   onDecrement: function(e) {
-    if (this.state.value <= 0) return;
+    if (this.state.value <= 1) return;
     this.setState({value: --this.state.value});
   },
   onIncrement: function(e) {
