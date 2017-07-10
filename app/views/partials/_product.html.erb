@@ -47,6 +47,8 @@
 	</button>
 <% end %>
 
-<%= render partial: "partials/modal"%>
+<% if params[:action] != "show" %>
+	<%= render partial: "partials/modal" %>
+<% end %>
 
 </section>

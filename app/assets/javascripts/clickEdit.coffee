@@ -30,19 +30,6 @@
 			editor.subscribe 'blur', (event, editable) =>
 				@product[ $(editable).data('edit') ] = $(editable).text()
 
-			$('.js-save').click =>
-				return if Object.keys( @product ).length is 0
-
-				@product.price = parseFloat @product.price if @product.price
-				@product.name  = @product.name.trim() if @product.name
-				url = if @action is 'create' then '/products' else "/products/#{@id}"
-
-				$[@action] url, 
-					{ @product },
-					(response) =>
-						@product = {}
-						console.log response
-
 	# Define the plugin
 	$.fn.extend clickEdit: (option, args...) ->
 		@each ->

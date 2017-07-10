@@ -1,10 +1,4 @@
 $(document).ready ->	
-	$('.js-clickEdit').clickEdit()
-	$(".image-picker").imagepicker ({
-		changed: ->
-			debugger
-	})
-
 	$('.js-add-cart').click ->
 	
 
