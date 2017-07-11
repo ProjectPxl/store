@@ -12,5 +12,5 @@ class Store.Views.EditProductPage extends Backbone.View
 		@product = @clickEdit.product
 		return if _.isEmpty @product
 
-		$.update "/products/#{@productId}", {product: @product}, (res) ->
+		$.update "/admin/products/#{@productId}", {product: @product}, (res) ->
 			console.log res

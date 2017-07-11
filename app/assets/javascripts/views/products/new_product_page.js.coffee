@@ -13,5 +13,5 @@ class Store.Views.NewProductPage extends Backbone.View
 		@product = @clickEdit.product
 		return if _.isEmpty @product
 
-		$.create '/products', {product: @product}, (res) ->
+		$.create '/admin/products', {product: @product}, (res) ->
 			console.log res

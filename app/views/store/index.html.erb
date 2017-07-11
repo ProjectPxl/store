@@ -1,0 +1,11 @@
+<section class="">
+	<div class="grid">
+		<ul>
+			<% @products.each do |product| %>
+				<li>
+					<%= link_to image_tag("product_images/#{}"), product %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</section>
