@@ -36,9 +36,9 @@
 
 <% if user_signed_in? %> <!-- make admin check -->
 	<% if action == "create" %>
-		<button class="btn js-save">Create Product</button>
+		<button class="btn <%= "js-#{action}" %>">Create Product</button>
 	<% elsif action == "update" %>
-		<button class="btn js-save">Update Product</button>
+		<button class="btn <%= "js-#{action}" %>">Update Product</button>
 	<% end %>
 
 	<!-- Button trigger modal -->

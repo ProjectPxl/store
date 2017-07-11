@@ -1,27 +1,25 @@
 class Store.Views.ProductsPage extends Backbone.View
 	events: 
-		'click .js-save' : 'saveProduct'
+		'click .js-create' : 'createProduct'
+		'click .js-update' : 'updateProduct'
 	
 	initialize: (options) ->
-		console.log 'init'
-		# init children views
-		if options.children
-			_.each options.children, (View) ->
-				new View()
-
+		clickEdit = new ClickEdit()
 		# init model
-		@model = new Store.Models.Product()
+		# @model = new Store.Models.Product()
+		
+		# init children views
+		@newProductView = new Store.Views.NewProductPage
+			model: @model
+			clickEdit: clickEdit
 
-	saveProduct: (event) ->
-		debugger
-		# return if Object.keys( @product ).length is 0
+		@editProductView = new Store.Views.EditProductPage
+			model: @model
+			clickEdit: clickEdit
+			productId: options.productId
 
-		# @product.price = parseFloat @product.price if @product.price
-		# @product.name  = @product.name.trim() if @product.name
-		# url = if @action is 'create' then '/products' else "/products/#{@id}"
+	createProduct: (event) =>
+		@newProductView.saveNewProduct()
 
-		# $[@action] url, 
-		# 	{ @product },
-		# 	(response) =>
-		# 		@product = {}
-		# 		console.log response
+	updateProduct: (event) =>
+		@editProductView.updateProduct()

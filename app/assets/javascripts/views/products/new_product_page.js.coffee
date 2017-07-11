@@ -1,7 +1,17 @@
 class Store.Views.NewProductPage extends Backbone.View
 
-  initialize: (options) ->
-  	$('.js-clickEdit').clickEdit()
-  	$(".image-picker").imagepicker ({
-  		changed: ->
-  	})
+	product: null
+
+	initialize: (options) ->
+		@clickEdit = options.clickEdit
+
+		# $(".image-picker").imagepicker ({
+		# 	changed: ->
+		# })
+
+	saveNewProduct: () ->
+		@product = @clickEdit.product
+		return if _.isEmpty @product
+
+		$.create '/products', {product: @product}, (res) ->
+			console.log res

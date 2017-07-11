@@ -3,6 +3,11 @@
 //= require jquery_ujs
 //= require turbolinks
 
+//====== Libs ======\\
+//= require bootstrap
+//= require medium-editor.min
+//= require clickEdit
+
 //====== React ======\\
 //= require react
 //= require react_ujs
@@ -21,8 +26,3 @@
 //====== Gems ======\\
 //= require jquery.rest
 //= require image-picker
-
-//====== Libs ======\\
-//= require bootstrap
-//= require medium-editor.min
-//= require clickEdit
