@@ -1,2 +1,2 @@
 class Store.Models.Product extends Backbone.Model
-	url: '/products'
+	urlRoot: '/admin/products'

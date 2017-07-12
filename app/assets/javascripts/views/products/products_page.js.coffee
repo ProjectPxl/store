@@ -14,6 +14,7 @@ class Store.Views.ProductsPage extends Backbone.View
 			clickEdit: clickEdit
 
 		@editProductView = new Store.Views.EditProductPage
+			el: '.product-page'
 			model: @model
 			clickEdit: clickEdit
 			productId: options.productId

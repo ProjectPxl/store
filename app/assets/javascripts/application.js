@@ -22,5 +22,4 @@
 //= require_tree ./routers
 
 //====== Gems ======\\
-//= require jquery.rest
 //= require image-picker

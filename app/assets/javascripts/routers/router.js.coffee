@@ -7,13 +7,13 @@ class Store.Routers.Products extends Backbone.Router
 
   show: (id) ->
     new Store.Views.ProductsPage
-      el : '.product-page'
-      productId: id
+      el        : '.product-page'
+      productId : id
 
   edit: (id) ->
     new Store.Views.ProductsPage
-      el : '.product-page'
-      productId: id
+      el         : '.product-page'
+      productId  : id
 
   new: () -> 
     new Store.Views.ProductsPage

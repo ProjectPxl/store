@@ -5,7 +5,6 @@ class window.ClickEdit
 		@initialize()
 
 	initialize: ->
-		console.log 'init'
 		wysiwyg = new MediumEditor '.js-wysiwyg', 
 			spellcheck: false,
 			toolbar: {

@@ -1,4 +1,3 @@
-console.log 'here'
 $(document).ready ->	
 	$('.js-add-cart').click ->
 		$(document).trigger 'product:addCart'
