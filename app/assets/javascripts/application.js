@@ -3,10 +3,9 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//====== Libs ======\\
-//= require bootstrap
-//= require medium-editor.min
-//= require clickEdit
+	//====== External & My Libs ======\\
+//= require_tree ./external
+//= require_tree ./lib
 
 //====== React ======\\
 //= require react
@@ -16,7 +15,6 @@
 //====== Backbone ======\\
 //= require underscore
 //= require backbone
-//= require store
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

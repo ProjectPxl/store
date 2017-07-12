@@ -1,13 +1,11 @@
 @Cart = React.createClass
   render: ->
-  	`<a href="/carts">Cart ( {this.state.count} )</a>`
+    `<a href="/carts">Cart ( {this.state.count} )</a>`
 
   getInitialState: ->
-  	$(document).on 'sdfewf', @addCart
-  	count: @props.count	
+    $(document).on 'product:addCart', @addToCart
+    count: @props.count	
 
-  addCart: (event, count) ->
-  	this.setState({
-  		count: 100
-  	})
-  		
+  addToCart: (event, count) ->
+    @setState
+      count: ++@state.count
