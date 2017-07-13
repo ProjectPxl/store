@@ -1,4 +1,4 @@
-class window.ClickEdit
+class ClickEdit
 	constructor: ->
 		@product = {}
 
@@ -25,3 +25,5 @@ class window.ClickEdit
 
 		editor.subscribe 'blur', (event, editable) =>
 			@product[ $(editable).data('edit') ] = $(editable).text().trim()
+
+window.ClickEdit = ClickEdit

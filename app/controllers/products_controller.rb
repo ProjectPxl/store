@@ -2,12 +2,14 @@ class ProductsController < ApplicationController
   before_action :get_product, only: :show
   before_action :get_images, only: :show
 	layout 'product'
+  respond_to :html, :json
 
   def index
   	@products = Product.all
   end
 
   def show
+    respond_with @product
   end
 
   private

@@ -1,8 +1,8 @@
 class Store.Routers.Products extends Backbone.Router
 
   routes: 
+    "products/:id"            : "show"
     "admin/products/new" 			:	"new"
-    "admin/products/:id" 			: "show"
     "admin/products/:id/edit" : "edit"
 
   show: (id) ->

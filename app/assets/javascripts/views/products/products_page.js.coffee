@@ -2,12 +2,10 @@ class Store.Views.ProductsPage extends Backbone.View
 	events: 
 		'click .js-create' : 'createProduct'
 		'click .js-update' : 'updateProduct'
-	
+
 	initialize: (options) ->
 		clickEdit = new ClickEdit()
-		# init model
-		# @model = new Store.Models.Product()
-		
+
 		# init children views
 		@newProductView = new Store.Views.NewProductPage
 			model: @model

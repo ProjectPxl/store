@@ -1,4 +1,4 @@
-class CartsController < ApplicationController
+class CartController < ApplicationController
   respond_to :html, :json
 
 	def index

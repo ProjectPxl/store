@@ -1,0 +1,5 @@
+<ul class="cart-items">
+	<li class="item">
+		<%= @p.get('name') %>
+	</li>
+</ul>

@@ -1,14 +1,10 @@
 $(document).ready ->	
-	$('.js-add-cart').click ->
-		$(document).trigger 'product:addCart'
+	# $.get( "/carts/create/2")
+	#  .done (data)->
+	#  	$(document).trigger 'product:addCart', data
+	#  .fail (error)->
+	#  	debugger
 
-
-		# $.get( "/carts/create/2")
-	 #  .done (data)->
-	 #  	$(document).trigger 'product:addCart', data
-	 #  .fail (error)->
-	 #  	debugger
-	
 	# stripeResponseHandler = (status, response) ->
 	# 	$form = $('#payment-form')
 
