@@ -10,4 +10,3 @@ window.Store =
 
 $(document).ready ->
   Store.initialize()
-  window.userCart = new Cart

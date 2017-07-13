@@ -4,7 +4,7 @@
 
 	getInitialState: ->
 		$(document).on 'product:addCart', @addToCart
-		count: @props.count	
+		count: Cart.getCartCount()
 
 	addToCart: ->
 		@setState

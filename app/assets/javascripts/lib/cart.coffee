@@ -1,6 +1,6 @@
 class Cart
 	constructor: ->
-		$('.js-add-cart').click ->
+		$(document).on 'click', '.js-add-cart', ->
 			p = $('[data-product-id]').data('product-id')
 			q = parseInt( $('.qty-box .qty').text() )
 			
@@ -8,4 +8,11 @@ class Cart
 			
 			$(document).trigger 'product:addCart'
 
-window.Cart = Cart
+	getCartCount: ->
+		count = 0
+		store.each (value, key) =>
+			if key.indexOf('cartProduct-') isnt -1
+				count++
+		count
+
+window.Cart = new Cart

@@ -3,17 +3,21 @@ class Store.Views.CartsPage extends Backbone.View
 	template: JST['carts/index']
 
 	initialize: ->
-		@model = new Store.Models.Cart()
-		@listenTo @model, 'sync', @render
+		@listenTo @collection, 'sync', @render
 
 		store.each (value, key) =>
 			if key.indexOf('cartProduct-') isnt -1
-				@model.set( id: key.split('-')[1] )
-				@collection.add @model
-				@model.fetch()
+				model = new Store.Models.Cart()
+				model.set
+					id: key.split('-')[1] 
+					qty: value
+				@collection.add model
+				console.log 'val', value
+				model.fetch()
 
 		@render
 
 	render: (product) ->
+		console.log 'r', product.get('qty')
 		@$el.append @template(p: product) 
 		@
