@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709182006) do
+ActiveRecord::Schema.define(version: 20170717054052) do
 
-  create_table "carts", force: :cascade do |t|
-    t.integer  "product_id"
+  create_table "billing_addresses", force: :cascade do |t|
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal"
+    t.string   "country"
+    t.string   "company"
+    t.string   "phone"
+    t.integer  "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -30,8 +39,9 @@ ActiveRecord::Schema.define(version: 20170709182006) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "stripe_token"
   end
 
   create_table "product_images", force: :cascade do |t|
@@ -48,6 +58,22 @@ ActiveRecord::Schema.define(version: 20170709182006) do
     t.datetime "updated_at",                          null: false
     t.decimal  "price",       precision: 8, scale: 2
     t.text     "description"
+  end
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal"
+    t.string   "country"
+    t.string   "company"
+    t.string   "phone"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

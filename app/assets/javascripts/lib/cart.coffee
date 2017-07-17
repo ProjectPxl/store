@@ -15,4 +15,11 @@ class Cart
 				count++
 		count
 
+	getItems: ->
+		items = {}
+		store.each (value, key) =>
+			if key.indexOf('cartProduct-') isnt -1
+				items[key] = value
+		items
+
 window.Cart = new Cart

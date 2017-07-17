@@ -47,6 +47,7 @@ class Store.Views.CheckoutsPage extends Backbone.View
 			shipping_address : @shippingModel.attributes
 			billing_address  : @billingModel.attributes
 			stripe_token     : @stripeModel.get('token')
+			cart     				 : Cart.getItems()
 		@model.save params, {
 			success: (res) ->
 				debugger
