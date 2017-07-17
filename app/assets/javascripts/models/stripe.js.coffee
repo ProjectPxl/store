@@ -1,0 +1,1 @@
+class Store.Models.Stripe extends Backbone.Model

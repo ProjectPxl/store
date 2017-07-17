@@ -1,0 +1,38 @@
+<form class="" id="shipping-form">
+  <fieldset>
+    <input autofocus="true" id="shipping-first-name" name="first_name" placeholder="Bruce" required="required" type="text" autocomplete="given-name" value="paul" />
+    <label for="shipping-first-name">First Name</label>
+
+    <input id="shipping-last-name" name="last_name" placeholder="Wayne" required="required" type="text" autocomplete="family-name" value="malt" />
+    <label for="shipping-last-name">Last Name</label>
+
+    <input id="shipping-address1" name="address_1" placeholder="Wayne Manor 145" required="required" type="text" autocomplete="address-line1" value="123 cali ave" />
+    <label for="shipping-address1">Address</label>
+
+    <input id="shipping-address2" name="address_2" placeholder="Apt. #" type="text" autocomplete="address-line2" value="apt 3" />
+    <label for="shipping-address2">Address two (Optional)</label>
+
+    <input id="shipping-city" name="city" placeholder="Gotham City" required="required" type="text" autocomplete="address-level2" value="mountain view" />
+    <label for="shipping-city">City</label>
+
+    <select id="shipping-country" name="country" autocomplete="country" required>
+      <option value="usa" selected>USA</option>
+      <option value="uk">UK</option>
+    </select>
+    <label for="shipping-country">Country</label>
+
+    <select id="shipping-state" name="state" autocomplete="address-level1" required>
+      <option value="ca" selected>CA</option>
+      <option value="ma">MA</option>
+    </select>
+    <label for="shipping-state">State</label>
+
+    <input id="shipping-postal-code" name="postal" placeholder="12345" required="required" type="text" autocomplete="postal-code" value="12345" />
+    <label for="shipping-postal-code">Zip / Postal</label>
+
+    <input id="shipping-phone" name="phone" placeholder="9162250666" type="tel" autocomplete="tel" value="9162250666" />
+    <label for="shipping-phone">Phone</label>
+    
+    <button type="submit" class="js-save-shipping">Next</button>
+  </fieldset>
+</form>

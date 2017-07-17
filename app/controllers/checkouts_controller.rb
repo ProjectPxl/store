@@ -1,4 +1,6 @@
 class CheckoutsController < ApplicationController
+  respond_to :html, :json
+
   def index
     @amount = Cart.get_charge_amount current_user.carts  
   end
@@ -26,4 +28,5 @@ class CheckoutsController < ApplicationController
   	end
 
   end
+  
 end

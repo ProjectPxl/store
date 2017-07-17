@@ -1,0 +1,38 @@
+<form class="" id="billing-form">
+  <fieldset>
+    <input autofocus="true" id="billing-first-name" name="first_name" placeholder="Bruce" required="required" type="text" autocomplete="given-name" value="paul" />
+    <label for="billing-first-name">First Name</label>
+
+    <input id="billing-last-name" name="last_name" placeholder="Wayne" required="required" type="text" autocomplete="family-name" value="malt" />
+    <label for="billing-last-name">Last Name</label>
+
+    <input id="billing-address1" name="address_1" placeholder="Wayne Manor 145" required="required" type="text" autocomplete="address-line1" value="123 billing st." />
+    <label for="billing-address1">Address</label>
+
+    <input id="billing-address2" name="address_2" placeholder="Apt. #" type="text" autocomplete="address-line2" value="apt 10" />
+    <label for="billing-address2">Address two (Optional)</label>
+
+    <input id="billing-city" name="city" placeholder="Gotham City" required="required" type="text" autocomplete="address-level2" value="mountain view" />
+    <label for="billing-city">City</label>
+
+    <select id="billing-country" name="country" autocomplete="country" required>
+      <option value="usa" selected>USA</option>
+      <option value="uk">UK</option>
+    </select>
+    <label for="billing-country">Country</label>
+
+    <select id="billing-state" name="state" autocomplete="address-level1" required>
+      <option value="ca" selected>CA</option>
+      <option value="ma">MA</option>
+    </select>
+    <label for="billing-state">State</label>
+
+    <input id="billing-postal-code" name="postal" placeholder="12345" required="required" type="text" autocomplete="postal-code" value="12345" />
+    <label for="billing-postal-code">Zip / Postal</label>
+
+    <input id="billing-phone" name="phone" placeholder="9162250666" type="tel" autocomplete="tel" value="9162250666" />
+    <label for="billing-phone">Phone</label>
+    
+    <button type="submit" class="js-save-billing">Next</button>
+  </fieldset>
+</form>
