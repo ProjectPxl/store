@@ -1,0 +1,16 @@
+<h1>Your Cart</h1>
+
+<section class="user-cart">
+
+	<div class="grid">
+		<ul>
+			<% @cart.products.each do |product| %>
+				<li>
+					<%= link_to product.name, product %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+</section>
+<%= link_to "Checkout", checkouts_path %>

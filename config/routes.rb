@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 	get '/products/:id', to: 'products#show', as: 'product'
 
 	resources :checkouts
-	resources :cart, only: ['index', 'destroy']
+	get '/cart', to: 'carts#show'
+	resources :carts, only: [:index, :create]
+	resources :cart_items, only: :create
 
 	namespace :admin do
 		root to: 'dashboards#index'

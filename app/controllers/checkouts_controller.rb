@@ -5,10 +5,8 @@ class CheckoutsController < ApplicationController
   end
 
   def create
-    total  = Product.total params[:cart]
-    raise total.inspect
-    return
-    order = Order.new
+    total  = Product.total params[:cart] #add total to order
+    order  = Order.new
 
     order.build_shipping_address shipping_params
     order.build_billing_address billing_params
