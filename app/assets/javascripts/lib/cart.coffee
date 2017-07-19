@@ -19,18 +19,21 @@ class Cart
 			quantity: qty
 
 		model.save params,
-			success: (res) ->
-				$(document).trigger 'product:addCart'
+			success: (model, res) ->
+				if res.exists == false
+					$(document).trigger 'product:addCart'
+				# TODO: esle notify: qty updated
 			error: (model, res) ->
 				#stringify json
-				debugger
+				store.remove('token')
 
-	getCartCount: ->
-		count = 0
-		store.each (value, key) =>
-			if key.indexOf('cartProduct-') isnt -1
-				count++
-		count
+	hasToken: ->
+		token = store.get('token')
+		if token and token.length then true else false
+
+	getToken: ->
+		if @hasToken()
+			store.get('token')
 
 	getItems: ->
 		items = {}

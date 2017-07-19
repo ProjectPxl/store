@@ -1,8 +1,8 @@
 class Store.Routers.Checkouts extends Backbone.Router
 	routes:
-		'checkouts' : 'index'
+		'carts/(:token)/checkout' : 'index'
 
-	index: ->
+	index: (token) ->
 		new Store.Views.CheckoutsPage 
 			el: '.checkout'
 			model: new Store.Models.Checkout()

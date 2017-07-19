@@ -1,11 +1,24 @@
 @CartComponent = React.createClass
 	render: ->
-		`<a href="/cart">Cart ( {this.state.count} )</a>`
+		`<a href={ "/carts?t="+this.state.token }>Cart ( {this.state.count} )</a>`
 
 	getInitialState: ->
 		$(document).on 'product:addCart', @addToCart
-		count: Cart.getCartCount() #get count from server
+		{
+			count: 0
+			token: ''
+		}
+		
+	componentDidMount: ->
+		if Cart.hasToken()	
+			token = Cart.getToken()
+			$.get '/carts/cart_count.json', token: token, (count) =>
+				if @isMounted()
+					@setState 
+						count: count
+						token: token
 
 	addToCart: ->
 		@setState
 			count: ++@state.count
+			token: Cart.getToken()

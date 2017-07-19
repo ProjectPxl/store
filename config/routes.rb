@@ -9,9 +9,18 @@ Rails.application.routes.draw do
 
 	get '/products/:id', to: 'products#show', as: 'product'
 
-	resources :checkouts
-	get '/cart', to: 'carts#show'
+	# resources :checkouts
+
+	get '/carts', to: 'carts#show'
+
+	scope 'carts/:t' do
+	  get 'checkout', :to => 'checkouts#index'
+	end
+
+	get '/carts/cart_count', to: 'carts#cart_count'
 	resources :carts, only: [:index, :create]
+
+
 	resources :cart_items, only: :create
 
 	namespace :admin do

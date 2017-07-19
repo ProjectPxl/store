@@ -7,18 +7,35 @@ class CartsController < ApplicationController
 	end
 
 	def show #shows cart based on token
-		@cart = Cart.find_by_token params[:t] #token
+		if params[:t].present?
+			@cart = Cart.find_by_token params[:t] #token
+		else
+			nil
+		end
+
 	end
 
 	def create #adds items to cart
 		product  = Product.find params[:product_id]
-		cart 	   = Cart.find_or_create_by token: params[:token]
-		item 		 = CartItem.create! cart: cart, product: product, quantity: params[:quantity]
-
-		cart.cart_items << item
-	  
-	  respond_with cart
+		cart 	 	 = Cart.find_or_create_by token: params[:token]
+		@item 	 = CartItem.find_by_product_id_and_cart_id( product.id, cart.id )
+		exists 	 = false
+		
+		if @item.nil? #increment qty of existing item or create new
+			@item = CartItem.create! cart: cart, product: product, quantity: params[:quantity]
+			cart.cart_items << @item
+		else
+			@item.update quantity: @item.quantity + params[:quantity]
+			exists = true
+		end
+		
+	  render json: {item: @item, exists: exists}
 	  # make sure model is in sync with client cart+token
+	end
+
+	def cart_count
+		cart = Cart.find_by_token params[:token]
+		respond_with cart.products.count
 	end
 
 	private

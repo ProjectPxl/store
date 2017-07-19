@@ -1,16 +1,19 @@
 <h1>Your Cart</h1>
 
 <section class="user-cart">
-
-	<div class="grid">
-		<ul>
-			<% @cart.products.each do |product| %>
-				<li>
-					<%= link_to product.name, product %>
-				</li>
-			<% end %>
-		</ul>
-	</div>
+	<% if @cart and @cart != nil %>
+		<div class="grid">
+			<ul>
+				<% @cart.cart_items.each do |item| %>
+					<li>
+						<%= link_to item.product.name, item.product %> | <%= item.quantity %> 
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	<% else %>
+		Cart empty!
+	<% end %>
 
 </section>
-<%= link_to "Checkout", checkouts_path %>
+<%= react_component('CheckoutLinkComponent') %>
