@@ -89,3 +89,8 @@ class Store.Views.CheckoutsPage extends Backbone.View
 
 	isBillingChecked: ->
 		@$el.find('.js-billing-same').is(':checked')
+
+	onClose: ->
+		@shippingView.close()
+		@paymentView.close()
+		@billingView.close()
