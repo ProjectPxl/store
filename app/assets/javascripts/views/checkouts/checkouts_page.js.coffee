@@ -3,13 +3,16 @@ class Store.Views.CheckoutsPage extends Backbone.View
 	events:
 		'click .js-complete-order' : 'getBillingAddress'
 
-	shippingModel: null
-	billingModel: null 
-	stripeModel: null 
+	shippingModel : null
+	billingModel  : null 
+	stripeModel  	: null 
+	token 				: null
 
 	template: JST['checkouts/index']
 
-	initialize: () ->
+	initialize: (opts) ->
+		@token = opts.token if opts.token
+
 		@shippingModel = new Store.Models.Shipping()
 		@billingModel  = new Store.Models.Billing()
 		@stripeModel   = new Store.Models.Stripe()
@@ -48,6 +51,7 @@ class Store.Views.CheckoutsPage extends Backbone.View
 			billing_address  : @billingModel.attributes
 			stripe_token     : @stripeModel.get('token')
 			cart     				 : Cart.getItems()
+			token 					 : @token
 		@model.save params, {
 			success: (res) ->
 				debugger

@@ -9,15 +9,15 @@ Rails.application.routes.draw do
 
 	get '/products/:id', to: 'products#show', as: 'product'
 
-	# resources :checkouts
+	get '/carts/cart_count', to: 'carts#cart_count'
 
-	get '/carts', to: 'carts#show'
-
-	scope 'carts/:t' do
-	  get 'checkout', :to => 'checkouts#index'
+	scope 'carts' do
+	  get 'checkouts/(:token)', :to => 'checkouts#show'
+	  resources :checkouts, only: :create
 	end
 
-	get '/carts/cart_count', to: 'carts#cart_count'
+	get '/carts/:token', to: 'carts#show'
+
 	resources :carts, only: [:index, :create]
 
 

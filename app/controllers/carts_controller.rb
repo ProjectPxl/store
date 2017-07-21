@@ -7,8 +7,8 @@ class CartsController < ApplicationController
 	end
 
 	def show #shows cart based on token
-		if params[:t].present?
-			@cart = Cart.find_by_token params[:t] #token
+		if params[:token].present?
+			@cart = Cart.find_by_token params[:token] #token
 		else
 			nil
 		end
@@ -35,7 +35,11 @@ class CartsController < ApplicationController
 
 	def cart_count
 		cart = Cart.find_by_token params[:token]
-		respond_with cart.products.count
+		if cart.nil?
+			respond_with 0
+		else
+			respond_with cart.products.count
+		end
 	end
 
 	private

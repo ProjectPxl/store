@@ -18,7 +18,7 @@ window.Store =
     # $(document).publishHotkeys(pubSub) 
     
     # Keep a reference to your router so you can release it later
-    @router = new Store.Routers.Checkouts()
+    @router = new Store.Routers.Router()
     Backbone.history.start(pushState: true)
   
   teardown: ->

@@ -3,7 +3,7 @@ class Store.Routers.Router extends Backbone.Router
 	views: {}
 
 	routes:
-		"carts/(:token)/checkout" : "index"
+		"carts/checkouts/(:token)" : "index"
 		"products/:id"            : "show"
 		"admin/products/new" 			:	"new"
 		"admin/products/:id/edit" : "edit"
@@ -12,10 +12,7 @@ class Store.Routers.Router extends Backbone.Router
 		@views['view1'] = new Store.Views.CheckoutsPage 
 			el: '.checkout'
 			model: new Store.Models.Checkout()
-
-	close: ->
-		for k,view of @views
-			view.close()
+			token: token
 
 	show: (id) ->
 		@views['view1'] = new Store.Views.ProductsPage
@@ -30,3 +27,7 @@ class Store.Routers.Router extends Backbone.Router
 	new: () -> 
 		@views['view1'] = new Store.Views.ProductsPage
 			el : '.product-page'
+
+	close: ->
+		for k,view of @views
+			view.close()

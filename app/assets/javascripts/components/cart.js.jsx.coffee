@@ -1,6 +1,6 @@
 @CartComponent = React.createClass
 	render: ->
-		`<a href={ "/carts?t="+this.state.token }>Cart ( {this.state.count} )</a>`
+		`<a href={ "/carts/"+this.state.token }>Cart ( {this.state.count} )</a>`
 
 	getInitialState: ->
 		$(document).on 'product:addCart', @addToCart
