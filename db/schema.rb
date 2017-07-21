@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718001231) do
+ActiveRecord::Schema.define(version: 20170721185744) do
 
   create_table "billing_addresses", force: :cascade do |t|
     t.string   "address_1"
@@ -54,9 +54,11 @@ ActiveRecord::Schema.define(version: 20170718001231) do
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "stripe_token"
+    t.string   "confirmation"
+    t.boolean  "closed",       default: false
   end
 
   create_table "product_images", force: :cascade do |t|

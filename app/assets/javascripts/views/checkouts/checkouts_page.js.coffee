@@ -53,8 +53,9 @@ class Store.Views.CheckoutsPage extends Backbone.View
 			cart     				 : Cart.getItems()
 			token 					 : @token
 		@model.save params, {
-			success: (res) ->
+			success: (order) =>
 				debugger
+				document.location.href = '/orders/confirmation/'+order.get 'confirmation'
 			error: (res) ->
 				debugger
 		}

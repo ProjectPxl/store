@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
 	resources :cart_items, only: :create
 
+	get 'orders/confirmation/(:confirmation)', :to => 'orders#confirmation', as: 'confirmation'
+
 	namespace :admin do
 		root to: 'dashboards#index'
 	  resources :dashboards

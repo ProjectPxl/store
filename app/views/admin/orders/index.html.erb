@@ -7,7 +7,7 @@
 			<li>
 				<%= order.user.email %>:
 				<% order.order_items.each do |item| %>
-					<ol><%= item.product.name %> | Q:<%= item.quantity %></ol>
+					<ol><%= item.product.name %> | Q:<%= item.quantity %> | #:<%= order.confirmation %> | closed:<%= order.closed %></ol>
 				<% end %>
 			</li>
 		<% end %>

@@ -25,6 +25,7 @@ class CheckoutsController < ApplicationController
     end
     order.stripe_token = params[:stripe_token]
     order.status = "Placed"
+    order.confirmation = Order.generate_confirmation
     order.user = current_user #change to guest user
 
     if !order.save
@@ -43,6 +44,7 @@ class CheckoutsController < ApplicationController
 
       if charge['paid'] #probably redundant
         cart.destroy
+        render json: order, status: :created
       end
 
   	rescue Stripe::CardError => e

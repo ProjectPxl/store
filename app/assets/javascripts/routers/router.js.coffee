@@ -7,6 +7,7 @@ class Store.Routers.Router extends Backbone.Router
 		"products/:id"            : "show"
 		"admin/products/new" 			:	"new"
 		"admin/products/:id/edit" : "edit"
+		'thanks/:token' :'thanks'
 
 	index: (token) =>
 		@views['view1'] = new Store.Views.CheckoutsPage 
@@ -31,3 +32,6 @@ class Store.Routers.Router extends Backbone.Router
 	close: ->
 		for k,view of @views
 			view.close()
+
+	thanks: ->
+		console.log 'thanks'
