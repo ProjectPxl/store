@@ -33,8 +33,6 @@ class Store.Views.CheckoutsPage extends Backbone.View
 		@listenTo @shippingModel, 'change',  @shippingDone
 		@listenTo @billingModel,  'change',  @billingDone
 		@listenTo @stripeModel,   'change',  @stripeDone
-		@listenTo @model,   			'save', (res) ->
-			debugger
 
 	shippingDone: (model) ->
 		# move to payment view
@@ -54,6 +52,7 @@ class Store.Views.CheckoutsPage extends Backbone.View
 			token 					 : @token
 		@model.save params, {
 			success: (order) =>
+				Cart.delete()
 				document.location.href = '/orders/confirmation/'+order.get 'confirmation'
 			error: (res) ->
 				debugger
