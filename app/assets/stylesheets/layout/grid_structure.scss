@@ -1,24 +1,36 @@
-.nav {
-	.logo {
-		// mobile
+.header {
 
-		// @include susy-breakpoint($bp-medium) {
-		// }   
-
+	.search,
+	.logo,
+	.cart {
 		@include susy-breakpoint($bp-large) {
-		    @include span(4 of 12);
+			@include span(4 of 12);
 		}
 	}
 
 	.cart {
+		@include omega;
+	}
+}
+
+.nav {
+	.nav-item {
 		@include susy-breakpoint($bp-large) {
-		    @include span(2 of 12 omega);
+			@include span(3 of 12);
 		}
+
+		&.omega{ @include omega; }
 	}
 } //nav
 
 .slider {
 	@include span(12 of 12);
+}
+
+.featured-collections {
+	.collection-item {
+		@include gallery(6 of 12);
+	}
 }
 
 .product-page {

@@ -1,0 +1,18 @@
+.featured{
+	margin-top: 40px
+
+	.featured-collections {
+		.collection-item {
+			margin-bottom: 18px;
+			img{width: 100%;}
+		}
+	} //collections
+
+	.featured-products {
+		.product {
+			margin-bottom: 18px;
+			img{width: 100%;}
+		}
+	} //collections
+
+}

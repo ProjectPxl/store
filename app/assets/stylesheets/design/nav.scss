@@ -1,10 +1,14 @@
-.nav {
-	background-color: $black;
-	padding: 20px 0;
-	margin-bottom: 40px;
-	a{color: white;}
-
-	.logo {
-		font-size: 2em;
+.header {
+	.header-items {
+		padding: 20px 0;
 	}
 }
+
+.nav {
+	padding: 20px 0;
+	a{color: white;}
+	.nav-item {
+		list-style-type: none;
+	}
+}
+

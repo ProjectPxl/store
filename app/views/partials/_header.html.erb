@@ -1,0 +1,25 @@
+<section class="header">
+
+  <div class="hero">  
+    <div class="background-image">
+      <div class="grid header-items">  
+          
+        <div class="search">
+          Search
+        </div>
+      
+        <div class="logo tac">
+          LOGO
+        </div>
+
+        <div class="cart tar">
+          <%= react_component('CartComponent', count: 0) %>
+        </div>
+
+      </div> <!-- grid -->
+
+      <%= render partial: "partials/nav" %>
+    </div>
+  </div>
+
+</section>

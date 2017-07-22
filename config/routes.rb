@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
 
 	resources :cart_items, only: :create
+	resources :collections
 
 	get 'orders/confirmation/(:confirmation)', :to => 'orders#confirmation', as: 'confirmation'
 

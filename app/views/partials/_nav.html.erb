@@ -1,26 +1,13 @@
 <section class="nav">
-  <%= link_to "All Orders", admin_orders_path %>
 
-  <div class="grid">  
-    
-    <div class="logo">
-      <%= link_to "STORE", root_path %>
-    </div>
-  
-    <div class="cart">
-      <!-- <%= react_component('Cart', count: get_cart_count) %> -->
-      <%= react_component('CartComponent', count: 0) %>
-    </div>
-
-    <div class="user">
-      <% if user_signed_in? %>
-        <%= link_to current_user.email, current_user %> | 
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-      <% else %>
-        <%= link_to('Login', new_user_session_path)  %>  
+  <div class="grid-small">  
+    <ul>
+      <% @collections.each_with_index do |col, i| %>
+        <li class="nav-item <%= @collections.size-1 == i ? 'omega' : '' %> ">
+          <%= link_to col.display_name, collection_path(col.name) %>
+        </li>
       <% end %>
-    </div>
-
+    </ul>
   </div> <!-- grid -->
 
 </section>

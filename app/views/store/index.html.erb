@@ -1,11 +1,21 @@
-<section class="">
+<section class="featured featured-collections">
+	<h4 class="tac">Featured Brands</h4>
 	<div class="grid">
-		<ul>
-			<% @products.each do |product| %>
-				<li>
-					<%= link_to product.name, product %>
-				</li>
-			<% end %>
-		</ul>
+	  <% @collections.each_with_index do |col, i| %>
+	    <div class="collection-item">
+	      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0146/0732/collections/STRAPS_1024x1024.jpg?v=1457382100"), collection_path(col.name) %>
+	    </div>
+	  <% end %>
+	</div>
+</section>
+
+<section class="featured featured-products">
+	<h4 class="tac">Featured Products</h4>
+	<div class="grid">
+	  <% @collections.each_with_index do |col, i| %>
+	    <div class="collection-item">
+	      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0146/0732/collections/STRAPS_1024x1024.jpg?v=1457382100"), collection_path(col.name) %>
+	    </div>
+	  <% end %>
 	</div>
 </section>
