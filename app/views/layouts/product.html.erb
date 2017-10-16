@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <%= render partial: "partials/nav" %>
+    <%= render partial: "partials/header", locals: {hero:false} %>
     <%= yield %> 
     <!-- <%= render partial: "partials/footer" %> -->
   </body>

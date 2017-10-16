@@ -1,8 +1,15 @@
 <section class="header">
 
-  <div class="hero">  
-    <div class="background-image">
-      <div class="grid header-items">  
+  <div class="hero <%= hero ? 'with-image' : '' %>">
+    <% if hero %> <div class="background-image"> <% end %>
+      <div class="grid header-items"> 
+        <% if hero %>
+          <div class="inner-text">
+            <h2 class="inner-item">New Arrival</h2>
+            <p class="inner-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, itaque distinctio hic. Pariatur atque, cumque ex id quis maiores dolores. Saepe quae reiciendis blanditiis neque dolorem fugit vitae a quo?</p>
+            <p><a class="btn inner-item" href="">Shop Now</a></p>
+          </div> 
+        <% end %>
           
         <div class="search">
           Search
@@ -19,7 +26,7 @@
       </div> <!-- grid -->
 
       <%= render partial: "partials/nav" %>
-    </div>
+    <%if hero %></div><% end %>
   </div>
 
 </section>

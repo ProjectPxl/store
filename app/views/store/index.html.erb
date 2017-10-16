@@ -1,20 +1,30 @@
 <section class="featured featured-collections">
 	<h4 class="tac">Featured Brands</h4>
 	<div class="grid">
-	  <% @collections.each_with_index do |col, i| %>
+	  <% header_collections.each_with_index do |col, i| %>
 	    <div class="collection-item">
-	      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0146/0732/collections/STRAPS_1024x1024.jpg?v=1457382100"), collection_path(col.name) %>
+	      <%= link_to col do %>
+	      	<div class="overlay"></div>
+	      	<%= image_tag "featured/#{col.image}" %>
+	      	<span class="collection-name">
+	      		<%= col.display_name %>
+	      	</span>
+	      <% end %>
 	    </div>
 	  <% end %>
 	</div>
 </section>
 
 <section class="featured featured-products">
-	<h4 class="tac">Featured Products</h4>
+	<h4 class="tac"> <%= @featured_products.display_name %> </h4>
 	<div class="grid">
-	  <% @collections.each_with_index do |col, i| %>
-	    <div class="collection-item">
-	      <%= link_to image_tag("https://cdn.shopify.com/s/files/1/0146/0732/collections/STRAPS_1024x1024.jpg?v=1457382100"), collection_path(col.name) %>
+	  <% @featured_products.products.each_with_index do |product, i| %>
+	    <div class="product <%= i%4 == 0 ? 'no-border' : '' %>">
+	      <%= link_to image_tag('product_images/'+product.product_images.thumbnail.name), product_path(product)%>
+	      <div class="caption">
+	      	<span class="product-name"> <%= link_to product.name, product_path(product) %> </span>
+	      	<p class="product-price"> $<%= product.price %> </p>
+	      </div>
 	    </div>
 	  <% end %>
 	</div>

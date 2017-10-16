@@ -1,5 +1,5 @@
 class StoreController < ApplicationController
   def index
-  	@collections = Collection.all
+  	@featured_products = Category.find_by_name 'featured'
   end
 end

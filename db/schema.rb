@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170722011017) do
+ActiveRecord::Schema.define(version: 20170722175258) do
 
   create_table "billing_addresses", force: :cascade do |t|
     t.string   "address_1"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20170722011017) do
     t.index ["token"], name: "index_carts_on_token"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "display_name"
+    t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "collections", force: :cascade do |t|
     t.string   "name"
     t.string   "display_name"
@@ -67,6 +75,13 @@ ActiveRecord::Schema.define(version: 20170722011017) do
     t.string   "stripe_token"
     t.string   "confirmation"
     t.boolean  "closed",       default: false
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "product_collections", force: :cascade do |t|

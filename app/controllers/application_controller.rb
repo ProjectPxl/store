@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :get_cart_count
+  helper_method :header_collections
 
-  def get_cart_count
-  	# current_user.carts.count if current_user
+  def header_collections
+  	@collections = Collection.all
   end
 end

@@ -2,8 +2,8 @@
 
   <div class="grid-small">  
     <ul>
-      <% @collections.each_with_index do |col, i| %>
-        <li class="nav-item <%= @collections.size-1 == i ? 'omega' : '' %> ">
+      <% header_collections.each_with_index do |col, i| %>
+        <li class="nav-item <%= header_collections.size-1 == i ? 'omega' : '' %> ">
           <%= link_to col.display_name, collection_path(col.name) %>
         </li>
       <% end %>

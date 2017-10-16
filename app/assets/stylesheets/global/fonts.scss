@@ -1,3 +1,29 @@
+body {
+	font-family: 'Cormorant Garamond', serif;
+	letter-spacing: .05em;
+	color: $black;
+}
+
 a {
 	text-decoration: none;
+	color: $black;
 }
+
+p {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.3em;
+}
+
+h1, h2 {
+	font-family: 'Cormorant Garamond', serif;
+	letter-spacing: .05em;
+	font-size: 5em;
+	margin: 20px 0;
+}	
+
+h3, h4 {
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	font-size: 0.92857em;
+}	

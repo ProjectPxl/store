@@ -1,0 +1,20 @@
+.footer {
+	border-top: 3px solid $black;
+	padding: 20px 0;
+	color: $black;
+
+	.copyright {
+		color: $gray;
+	}
+
+	h3 {
+		font-weight: 400;
+	}
+
+	.footer-item {
+		font-family: 'Open Sans', sans-serif;
+		font-size: .8em;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+}

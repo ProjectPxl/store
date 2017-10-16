@@ -33,6 +33,12 @@
 	}
 }
 
+.featured-products {
+	.product {
+		@include gallery(3 of 12);
+	}
+}
+
 .product-page {
 	.slider {
 		img{width: 100%; height: 100%;}
@@ -76,5 +82,25 @@
 	li {
 		@include span(3 of 12);
 		img{width: 100%;}
+	}
+}
+
+.footer {
+	.copyright {
+		@include span(3 of 12);
+	}
+
+	.info {
+		@include span(5 of 12);
+	}
+
+	.subscribe {
+		@include span(4 of 12 omega);
+	}
+	.contact,
+	.support,
+	.about-us {
+		@include span(3 of 9);
+		&.omega {@include omega;}
 	}
 }

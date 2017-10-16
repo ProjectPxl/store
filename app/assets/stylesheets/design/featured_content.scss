@@ -1,17 +1,70 @@
 .featured{
-	margin-top: 40px
+	margin-top: 40px;
 
-	.featured-collections {
+	&.featured-collections {
 		.collection-item {
+
+			position: relative;
 			margin-bottom: 18px;
-			img{width: 100%;}
+			img {
+				width: 100%;
+			}
+
+			.overlay {
+			  background-color: black;
+			  position: absolute;
+			  height: 100%;
+			  width: 100%;
+			  left: 0;
+			  top: 0;
+			  bottom: 0;
+			  right: 0;
+			  opacity: .1;
+			  -webkit-transition: all 0.4s ease-in-out 0s;
+			  -moz-transition: all 0.4s ease-in-out 0s;
+			  transition: all 0.4s ease-in-out 0s;
+			}
+
+		  &:hover .overlay{
+		    opacity: .5;
+		  }
+
+		  .collection-name {
+		  	position: absolute;
+		  	top: 50%;
+		  	left: 0;
+		  	width: 100%;
+		  	text-align: center;
+		  	-ms-transform: translateY(-50%);
+		  	-webkit-transform: translateY(-50%);
+		  	transform: translateY(-50%);
+		  	color: #fff;
+		  	font-size: 2.42857em;
+		  	font-family: 'Cormorant Garamond', serif;
+		  	font-weight: 600;
+		  }
 		}
 	} //collections
 
-	.featured-products {
+	&.featured-products {
 		.product {
-			margin-bottom: 18px;
-			img{width: 100%;}
+			text-align: center;		
+			margin-bottom: 60px;
+			padding:10px;
+			border-left: 1px solid $light-gray;
+			&.no-border {
+				border-left: none;
+			}
+			img {width: 80%;}
+			.caption {
+				padding: 0 10px;
+			}
+
+			.product-price {
+				margin: 3px 0;
+				font-size: .8em;
+				font-family: 'Open Sans', sans-serif;
+			}
 		}
 	} //collections
 

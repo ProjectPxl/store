@@ -1,16 +1,40 @@
 .hero {
 	position: relative;
-	padding-bottom: 40%;
-	color: white;
+	color: $black;
+
+	&.with-image{
+		.nav a, .cart a{color: white;}
+		padding-bottom: 55%;
+		color: white;
+	}
 
 	.background-image {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-image: url("https://hodinkee-shopify.imgix.net/s/files/1/0146/0732/files/homepage-1_b7c14d43-ea6b-4ec8-bb84-2faa65cd4dab.jpg?auto=format&fm=jpg&ixjsv=2.2.3&q=55&w=1440");
+		background-image: url("hero.jpg");
 		background-repeat: no-repeat;		
 		background-size: cover;
-		background-position: 50% 50%;
+		// background-position: 50% 50%;
 		z-index: 0;
+	}
+
+	.inner-text {
+		position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    padding-top: 9%;
+    padding-top: calc(.5625 * 180px);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+
+    .inner-item {
+    	width: 50%;
+    	display: inline-block;
+    	&.btn {display:inline;}
+    }
 	}
 }
